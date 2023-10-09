@@ -20,18 +20,18 @@ h1, h2 {
 nav {
     background-color: #f4f4f4;
     padding: 10px;
-    text-align: center;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
-    margin-right: 20px;
     display: inline-block;
+    margin-right: 20px;
 }
 
 nav ul li a {
@@ -48,7 +48,9 @@ nav ul li a:hover {
 
 .container {
     margin: 20px auto;
+    max-width: 800px;
     padding: 20px;
+    text-align: center;
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -93,7 +95,7 @@ p {
 }
 
 .doctor-image {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -102,7 +104,10 @@ p {
 
 /* Feature chart styles */
 .feature-chart {
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 600px;
     margin: 0 auto;
     text-align: center;
     font-weight: bold;
@@ -115,7 +120,9 @@ p {
 
 /* Services styles */
 .services {
-    display: block; /* Change to a single column layout */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .service {
@@ -123,22 +130,4 @@ p {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul li {
-        margin-right: 10px; /* Reduce margin for smaller screens */
-    }
-    .button {
-        margin: 5px;
-    }
-}
-
-@media (max-width: 576px) {
-    nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px; /* Stack navigation links */
-        display: block;
-    }
 }

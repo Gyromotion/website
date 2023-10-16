@@ -1,13 +1,9 @@
 /* Global Styles */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    background-image: url('img/bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 header {
@@ -123,6 +119,7 @@ p {
 }
 
 /* Services styles */
+
 .services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -134,4 +131,17 @@ p {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .service {
+        padding: 10px 20px;
+    }
 }

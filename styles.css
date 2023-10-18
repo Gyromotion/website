@@ -185,14 +185,17 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 80%; /* Set the width to 80% to match the container width */
+    padding: 20px;
+    max-width: 800px; /* Optional: set a maximum width to prevent stretching on larger screens */
 }
 
 .popup img {
     max-width: 100%;
     height: auto;
+    width: 100%; /* Set the image width to 100% to match the container */
 }
 
 .popup-close {
@@ -202,5 +205,6 @@ header {
     font-size: 30px;
     cursor: pointer;
 }
+
 
 /* Delete this part later */

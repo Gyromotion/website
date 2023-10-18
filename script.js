@@ -33,16 +33,26 @@ function handleMouseLeave(event) {
 
 // Delete this part later
 // Function to open the popup
+// Function to open the popup with animation
 function openPopup() {
-    document.getElementById("popup").style.display = "block";
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+    
+    // Add the "fade-in" class to trigger the animation
+    popup.classList.add("fade-in");
 }
 
 // Function to close the popup
 function closePopup() {
-    document.getElementById("popup").style.display = "none";
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+    
+    // Remove the "fade-in" class to reset the animation
+    popup.classList.remove("fade-in");
 }
 
 // Always open the popup when the page is visited
 openPopup();
+
 
 // Delete this part later

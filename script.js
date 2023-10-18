@@ -42,9 +42,7 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
 
-// Check if the popup should be shown (e.g., only on the first visit)
-if (localStorage.getItem("popupShown") !== "true") {
-    openPopup();
-    localStorage.setItem("popupShown", "true");
-}
+// Always open the popup when the page is visited
+openPopup();
+
 // Delete this part later

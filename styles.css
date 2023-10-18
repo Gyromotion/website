@@ -173,8 +173,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
@@ -189,17 +189,17 @@ header {
     text-align: center;
     width: 80%; /* Set the width to 80% to match the container width */
     padding: 20px;
-    max-width: 800px; /* Optional: set a maximum width to prevent stretching on larger screens */
+    max-width: 80%; /* Optional: set a maximum width to prevent stretching on larger screens */
 }
 
 .popup img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
-    width: 100%; /* Set the image width to 100% to match the container */
+    width: 80%; /* Set the image width to 100% to match the container */
 }
 
 .popup-close {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 15px;
     font-size: 30px;

@@ -28,3 +28,23 @@ function handleMouseLeave(event) {
         dropdown.classList.remove('show');
     });
 }
+
+
+
+// Delete this part later
+// Function to open the popup
+function openPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+// Function to close the popup
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// Check if the popup should be shown (e.g., only on the first visit)
+if (localStorage.getItem("popupShown") !== "true") {
+    openPopup();
+    localStorage.setItem("popupShown", "true");
+}
+// Delete this part later

@@ -8,6 +8,7 @@ body {
     background-image: url('img/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 header {
@@ -171,8 +172,7 @@ header {
 .popup {
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
+    margin: auto;
     width: 80%;
     height: 80%;
     justify-content:center;

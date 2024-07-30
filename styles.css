@@ -109,11 +109,12 @@ p {
 }
 
 /* Feature chart styles */
+/* Feature chart styles */
 .feature-chart {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
-    max-width: auto;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
     font-weight: bold;
@@ -123,16 +124,16 @@ p {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
 }
 
+/* Feature item styles */
 .feature {
     background-color: #ff4247;
     color: #fff;
     padding: 10px;
-    margin: 0 10px;
     border-radius: 5px;
 }
+
 /* Services styles */
 
 header {

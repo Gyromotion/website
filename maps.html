@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Google Reviews</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBASVA4DyLglydYFexjr_4IxGDpShHXZv4&libraries=places"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBASVA4DyLglydYFexjr_4IxGDpShHXZv4&libraries=places"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,16 +12,18 @@
             margin: 0;
             padding: 0;
         }
+
         #reviews-container {
             width: 100%;
             max-width: 600px;
-            height: 150px; /* Default height */
+            height: 150px;
+            /* Default height */
             overflow: hidden;
             margin: 20px auto;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
             padding: 10px;
         }
@@ -35,9 +39,11 @@
         }
 
         .review {
-            display: none; /* Initially hide all reviews */
+            display: none;
+            /* Initially hide all reviews */
             text-align: center;
-            opacity: 0; /* Initially hide reviews with opacity */
+            opacity: 0;
+            /* Initially hide reviews with opacity */
             transition: opacity 1s ease-in-out;
             position: absolute;
             width: 100%;
@@ -69,11 +75,13 @@
 
         .review-content .text {
             margin-top: 5px;
-            max-height: 60px; /* Default height for truncated text */
+            max-height: 60px;
+            /* Default height for truncated text */
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3; /* Number of lines to show */
+            -webkit-line-clamp: 3;
+            /* Number of lines to show */
             -webkit-box-orient: vertical;
         }
 
@@ -90,10 +98,12 @@
         }
 
         .review:hover {
-            cursor: default; /* Change cursor to default on hover */
+            cursor: default;
+            /* Change cursor to default on hover */
         }
     </style>
 </head>
+
 <body>
     <div id="reviews-container">
         <div id="reviews"></div>
@@ -104,7 +114,7 @@
             var service = new google.maps.places.PlacesService(document.createElement('div'));
             service.getDetails({
                 placeId: 'ChIJycK16z2xwjsR4t-JtBKEyjE' // Replace with your Place ID
-            }, function(place, status) {
+            }, function (place, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     var reviews = place.reviews;
                     var reviewsDiv = document.getElementById('reviews');
@@ -128,7 +138,7 @@
                         }
                     }
 
-                    reviews.forEach(function(review) {
+                    reviews.forEach(function (review) {
                         var reviewDiv = document.createElement('div');
                         reviewDiv.classList.add('review');
                         reviewDiv.innerHTML = `
@@ -177,4 +187,5 @@
         window.onload = initMap;
     </script>
 </body>
+
 </html>

@@ -18,7 +18,8 @@ header {
     text-align: center;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
 }
 
@@ -112,17 +113,26 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    max-width: 600px;
+    max-width: auto;
     margin: 0 auto;
     text-align: center;
     font-weight: bold;
     color: #333;
+    background-color: rgb(238, 238, 238);
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
 }
 
+.feature {
+    background-color: #ff4247;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
 /* Services styles */
 
 header {
@@ -143,7 +153,7 @@ header {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 /* Set link color to black */
@@ -177,8 +187,8 @@ header {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
-    justify-content:center;
-    align-item:center;
+    justify-content: center;
+    align-item: center;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
@@ -191,15 +201,21 @@ header {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 714px; /* Half of the image's width (1428 / 2) */
-    height: 1000px; /* Half of the image's height (2000 / 2) */
-    max-width: 100%; /* Optional: set a maximum width to prevent stretching on larger screens */
-    max-height: 100%; /* Optional: set a maximum height to prevent stretching on smaller screens */
+    width: 714px;
+    /* Half of the image's width (1428 / 2) */
+    height: 1000px;
+    /* Half of the image's height (2000 / 2) */
+    max-width: 100%;
+    /* Optional: set a maximum width to prevent stretching on larger screens */
+    max-height: 100%;
+    /* Optional: set a maximum height to prevent stretching on smaller screens */
 }
 
 .popup img {
-    width: 100%; /* Set the image width to 100% to fill the popup */
-    height: 100%; /* Set the image height to 100% to fill the popup */
+    width: 100%;
+    /* Set the image width to 100% to fill the popup */
+    height: 100%;
+    /* Set the image height to 100% to fill the popup */
 }
 
 .popup-close {
@@ -227,10 +243,12 @@ header {
     padding: 25px 25px;
     gap: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-  }
-  
-  /* for all social containers*/
-  .socialContainer {
+    border-radius: 15px;
+    /* Add this line for rounded corners */
+}
+
+/* for all social containers*/
+.socialContainer {
     width: 52px;
     height: 52px;
     background-color: rgb(44, 44, 44);
@@ -239,55 +257,184 @@ header {
     justify-content: center;
     overflow: hidden;
     transition-duration: .3s;
-  }
-  /* instagram*/
-  .containerOne:hover {
+    border-radius: 15px;
+    /* Add this line for rounded corners */
+}
+
+/* instagram*/
+.containerOne {
     background-color: #d62976;
     transition-duration: .3s;
-  }
-  /* youtube*/
-  .containerTwo:hover {
+}
+
+/* youtube*/
+.containerTwo {
     background-color: #ff0000;
     transition-duration: .3s;
-  }
-  /* linkdin*/
-  .containerThree:hover {
+}
+
+/* linkdin*/
+.containerThree {
     background-color: #0072b1;
     transition-duration: .3s;
-  }
-  /* Whatsapp*/
-  .containerFour:hover {
+}
+
+/* Whatsapp*/
+.containerFour {
     background-color: #128C7E;
     transition-duration: .3s;
-  }
-  
-  .socialContainer:active {
+}
+
+.socialContainer:active {
     transform: scale(0.9);
     transition-duration: .3s;
-  }
-  
-  .socialSvg {
+}
+
+.socialSvg {
     width: 17px;
-  }
-  
-  .socialSvg path {
+}
+
+.socialSvg path {
     fill: rgb(255, 255, 255);
-  }
-  
-  .socialContainer:hover .socialSvg {
+}
+
+.socialContainer:hover .socialSvg {
     animation: slide-in-top 0.3s both;
-  }
-  
-  @keyframes slide-in-top {
+}
+
+@keyframes slide-in-top {
     0% {
-      transform: translateY(-50px);
-      opacity: 0;
+        transform: translateY(-50px);
+        opacity: 0;
     }
-  
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  
+}
+
+
+/* Existing CSS */
+body {
+    background-image: url('img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#reviews-container {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    /* Default height */
+    overflow: hidden;
+    /* Hide overflow content */
+    margin: 20px auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#reviews {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds height */
+    overflow-x: hidden;
+    /* Hide horizontal overflow */
+    padding-right: 15px;
+    /* Space for scrollbar */
+}
+
+.review {
+    display: none;
+    /* Initially hide all reviews */
+    text-align: center;
+    opacity: 0;
+    /* Initially hide reviews with opacity */
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.review img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.review-content p {
+    margin: 0;
+    color: #333;
+}
+
+.review-content .author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review-content .rating {
+    color: #ffb400;
+}
+
+.review-content .text {
+    margin-top: 5px;
+    max-height: 60px;
+    /* Default height for truncated text */
+    overflow: auto;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.read-more {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #ff4247;
+    text-decoration: underline;
+}
+
+.expanded .review-content .text {
+    max-height: none;
+    -webkit-line-clamp: unset;
+}
+
+/* Additional Styles */
+header,
+nav,
+footer {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.map-container {
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #ff4247;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}

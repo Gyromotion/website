@@ -37,7 +37,7 @@ function handleMouseLeave(event) {
 function openPopup() {
     var popup = document.getElementById("popup");
     popup.style.display = "block";
-    
+
     // Add the "fade-in" class to trigger the animation
     popup.classList.add("fade-in");
 }
@@ -46,7 +46,7 @@ function openPopup() {
 function closePopup() {
     var popup = document.getElementById("popup");
     popup.style.display = "none";
-    
+
     // Remove the "fade-in" class to reset the animation
     popup.classList.remove("fade-in");
 }

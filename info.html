@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Gyromotion</title>
+    <style>
+
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBASVA4DyLglydYFexjr_4IxGDpShHXZv4&libraries=places"></script>
+</head>
+
+<body>
+    <div id="common-header"></div><script src="common.js"></script>
+
+    <div class="container">
+        <h2>About Us</h2>
+
+        <div id="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div id="reviews"></div>
+        </div>
+        
+        <!-- Add the Google Docs embed here -->
+        <div class="google-docs">
+            <h2>Our Documentation</h2>
+            <iframe src="https://docs.google.com/document/d/1nYI5MbAKSlxzBKg9Hwu5DBNDgyL6zdAoseVUI_3owqM/pub?embedded=true" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+        
+        <center>
+            <h2>Contact Us</h2>
+            <div class="card">
+                <a href="https://www.instagram.com/gyromotion.physio/" class="socialContainer containerOne">
+                    <!-- SVG code for Instagram -->
+                </a>
+                <a href="https://www.youtube.com/@NeuroNetwork" class="socialContainer containerTwo">
+                    <!-- SVG code for YouTube -->
+                </a>
+                <a href="https://www.linkedin.com/in/prajakta-joshi-0482b91b2/" class="socialContainer containerThree">
+                    <!-- SVG code for LinkedIn -->
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919518554022&text=Hi" class="socialContainer containerFour">
+                    <!-- SVG code for WhatsApp -->
+                </a>
+            </div>
+        </center>
+
+        <p> &#x1F4CD Plot Number 1, Shree Siddhivinayak society, Near Pawar Hospital, front Of Lotus Computers, Vatan
+            Nagar, Talegaon Dabhade, Maharashtra Pune 410507</p>
+
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.4841201209038!2d73.67506487519677!3d18.73190058240315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b13debb5c2c9%3A0x31ca8412b489dfe2!2sGyromotion%20Physiotherapy%20Clinic!5e0!3m2!1sen!2sin!4v1697547447853!5m2!1sen!2sin"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="https://maps.app.goo.gl/NPd3sYozJ439jVKg8?g_st=ic" class="button">Navigate To Clinic</a>
+        <p>Why Choose Us:</p>
+        <div class="feature-chart">
+
+            <div class="feature">Individualized Care</div>
+            <div class="feature">Evidence Based Approach</div>
+            <div class="feature">Convenient Scheduling</div>
+        </div>
+        <p>Take the first step towards a healthier, pain-free life by scheduling an appointment with Gyromotion today.
+            Feel free to explore our website for more information, and please don't hesitate to reach out if you have
+            any questions. We look forward to partnering with you on your path to better health!</p>
+        <a href="appointment.html" class="button">Book An Appointment</a>
+        <br>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Gyromotion Physiotherapy Clinic. All rights reserved.
+    </footer>
+
+    <script>
+        // Existing script for reviews and maps
+        let reviewInterval;
+        let reviewsDiv;
+        let reviews;
+        let index = 0;
+        let rotationPaused = false;
+
+        function initMap() {
+            var service = new google.maps.places.PlacesService(document.createElement('div'));
+            service.getDetails({
+                placeId: 'ChIJycK16z2xwjsR4t-JtBKEyjE' // Replace with your Place ID
+            }, function (place, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    reviews = place.reviews;
+                    reviewsDiv = document.getElementById('reviews');
+
+                    function showReview() {
+                        if (rotationPaused) return;
+                        var allReviews = reviewsDiv.children;
+                        if (allReviews.length > 0) {
+                            for (var i = 0; i < allReviews.length; i++) {
+                                allReviews[i].style.display = 'none';
+                                allReviews[i].style.opacity = '0';
+                            }
+                            allReviews[index].style.display = 'block';
+                            allReviews[index].style.opacity = '1';
+
+                            index = (index + 1) % allReviews.length;
+                        }
+                    }
+
+                    reviews.forEach(function (review) {
+                        var reviewDiv = document.createElement('div');
+                        reviewDiv.classList.add('review');
+                        reviewDiv.innerHTML = `
+                            <img src="${review.profile_photo_url || 'https://maps.gstatic.com/tactile/afg_main/2x/places_default_avatar.png'}" alt="Avatar">
+                            <div class="review-content">
+                                <p class="author">${review.author_name} <span class="rating">(${review.rating} stars)</span></p>
+                                <p class="text">${review.text}</p>
+                                <span class="read-more" onclick="toggleExpand(this)">Read More</span>
+                            </div>
+                        `;
+                        reviewsDiv.appendChild(reviewDiv);
+                    });
+
+                    // Show the first review
+                    showReview();
+
+                    reviewInterval = setInterval(showReview, 5000); // Change review every 5 seconds
+
+                    // Function to toggle expand/collapse
+                    window.toggleExpand = function (element) {
+                        var reviewDiv = element.closest('.review');
+                        reviewDiv.classList.toggle('expanded');
+                        rotationPaused = !rotationPaused; // Pause rotation when expanding
+                    }
+
+                    // Function to resume rotation
+                    function resumeRotation() {
+                        if (rotationPaused) {
+                            rotationPaused = false;
+                            clearInterval(reviewInterval);
+                            reviewInterval = setInterval(showReview, 5000);
+                        }
+                    }
+
+                    // Detect click outside review container to resume rotation
+                    document.addEventListener('click', function (event) {
+                        if (!document.getElementById('reviews-container').contains(event.target)) {
+                            resumeRotation();
+                        }
+                    });
+                }
+            });
+        }
+
+        // Initialize the map and reviews
+        window.onload = initMap;
+    </script>
+</body>
+
+</html>

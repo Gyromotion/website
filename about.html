@@ -25,7 +25,9 @@
 
         <div id="reviews-container">
             <h2>Reviews</h2>
-            <div id="reviews"></div>
+            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-80673389-e1d3-4259-bb13-d66589506a4d" data-elfsight-app-lazy></div>
         </div>
         <center>
             <h2>Contact Us</h2>
@@ -95,85 +97,7 @@
         <p>&copy; 2023 Gyromotion Physiotherapy Clinic. All rights reserved.
     </footer>
 
-    <script>
-        let reviewInterval;
-        let reviewsDiv;
-        let reviews;
-        let index = 0;
-        let rotationPaused = false;
-
-        function initMap() {
-            var service = new google.maps.places.PlacesService(document.createElement('div'));
-            service.getDetails({
-                placeId: 'ChIJycK16z2xwjsR4t-JtBKEyjE' // Replace with your Place ID
-            }, function (place, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    reviews = place.reviews;
-                    reviewsDiv = document.getElementById('reviews');
-
-                    function showReview() {
-                        if (rotationPaused) return;
-                        var allReviews = reviewsDiv.children;
-                        if (allReviews.length > 0) {
-                            for (var i = 0; i < allReviews.length; i++) {
-                                allReviews[i].style.display = 'none';
-                                allReviews[i].style.opacity = '0';
-                            }
-                            allReviews[index].style.display = 'block';
-                            allReviews[index].style.opacity = '1';
-
-                            index = (index + 1) % allReviews.length;
-                        }
-                    }
-
-                    reviews.forEach(function (review) {
-                        var reviewDiv = document.createElement('div');
-                        reviewDiv.classList.add('review');
-                        reviewDiv.innerHTML = `
-                            <img src="${review.profile_photo_url || 'https://maps.gstatic.com/tactile/afg_main/2x/places_default_avatar.png'}" alt="Avatar">
-                            <div class="review-content">
-                                <p class="author">${review.author_name} <span class="rating">(${review.rating} stars)</span></p>
-                                <p class="text">${review.text}</p>
-                                <span class="read-more" onclick="toggleExpand(this)">Read More</span>
-                            </div>
-                        `;
-                        reviewsDiv.appendChild(reviewDiv);
-                    });
-
-                    // Show the first review
-                    showReview();
-
-                    reviewInterval = setInterval(showReview, 5000); // Change review every 5 seconds
-
-                    // Function to toggle expand/collapse
-                    window.toggleExpand = function (element) {
-                        var reviewDiv = element.closest('.review');
-                        reviewDiv.classList.toggle('expanded');
-                        rotationPaused = !rotationPaused; // Pause rotation when expanding
-                    }
-
-                    // Function to resume rotation
-                    function resumeRotation() {
-                        if (rotationPaused) {
-                            rotationPaused = false;
-                            clearInterval(reviewInterval);
-                            reviewInterval = setInterval(showReview, 5000);
-                        }
-                    }
-
-                    // Detect click outside review container to resume rotation
-                    document.addEventListener('click', function (event) {
-                        if (!document.getElementById('reviews-container').contains(event.target)) {
-                            resumeRotation();
-                        }
-                    });
-                }
-            });
-        }
-
-        // Initialize the map and reviews
-        window.onload = initMap;
-    </script>
+    
 </body>
 
 </html>

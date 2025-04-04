@@ -328,7 +328,7 @@ body {
 #reviews-container {
     width: 100%;
     max-width: 600px;
-    height: 250px;
+    height: auto;
     /* Default height */
     overflow: hidden;
     /* Hide overflow content */

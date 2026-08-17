@@ -9,6 +9,7 @@ function loadHeader() {
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="appointment.html">Book an Appointment</a></li>
+                <li><a href="https://gyromotionphysio.in/pms/">PMS</a></li>
             </ul>
         </nav>
     `;

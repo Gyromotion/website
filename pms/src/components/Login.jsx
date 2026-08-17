@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../lib/firebase';
-import { Activity } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -51,8 +51,8 @@ export default function Login() {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: 'var(--bg-color)', width: '100%' }}>
       <div className="card glass-panel" style={{ width: '100%', maxWidth: '400px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div className="p-4 rounded-full inline-flex mb-4" style={{ backgroundColor: '#eff6ff' }}>
-            <Activity size={40} style={{ color: 'var(--primary-color)' }} />
+          <div className="mb-4 flex justify-center">
+            <img src={logo} alt="Gyromotion Logo" style={{ width: '80px', height: 'auto', objectFit: 'contain' }} />
           </div>
           <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Gyromotion Sign In</h2>
           <p className="text-muted text-sm mt-2">Sign in with your staff account.</p>

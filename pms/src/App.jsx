@@ -11,6 +11,7 @@ import Appointments from './components/Appointments';
 import StaffManager from './components/StaffManager';
 import Invoice from './components/Invoice';
 import './index.css';
+import logo from './assets/logo.png';
 
 function Sidebar() {
   const location = useLocation();
@@ -30,7 +31,7 @@ function Sidebar() {
     <aside className="sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <div className="sidebar-header">
         <div className="logo-container">
-          <Activity className="logo-icon" size={28} />
+          <img src={logo} alt="Gyromotion Logo" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
           <span className="logo-text">Gyromotion</span>
         </div>
       </div>

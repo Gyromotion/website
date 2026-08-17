@@ -54,7 +54,7 @@ export default function Login() {
           <div className="p-4 rounded-full inline-flex mb-4" style={{ backgroundColor: '#eff6ff' }}>
             <Activity size={40} style={{ color: 'var(--primary-color)' }} />
           </div>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Clinic Sign In</h2>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Gyromotion Sign In</h2>
           <p className="text-muted text-sm mt-2">Sign in with your staff account.</p>
         </div>
 

@@ -31,8 +31,7 @@ function Sidebar() {
     <aside className="sidebar" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <div className="sidebar-header">
         <div className="logo-container">
-          <img src={logo} alt="Gyromotion Logo" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
-          <span className="logo-text">Gyromotion</span>
+          <img src={logo} alt="Gyromotion Logo" style={{ width: '140px', height: 'auto', objectFit: 'contain' }} />
         </div>
       </div>
       <nav className="sidebar-nav" style={{ flex: 1 }}>

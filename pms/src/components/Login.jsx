@@ -51,8 +51,8 @@ export default function Login() {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', backgroundColor: 'var(--bg-color)', width: '100%' }}>
       <div className="card glass-panel" style={{ width: '100%', maxWidth: '400px' }}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div className="mb-4 flex justify-center">
-            <img src={logo} alt="Gyromotion Logo" style={{ width: '80px', height: 'auto', objectFit: 'contain' }} />
+          <div className="mb-6 flex justify-center w-full">
+            <img src={logo} alt="Gyromotion Logo" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
           </div>
           <h2 style={{ fontSize: '1.5rem', fontWeight: '700' }}>Gyromotion Sign In</h2>
           <p className="text-muted text-sm mt-2">Sign in with your staff account.</p>

@@ -16,4 +16,21 @@ function loadHeader() {
     document.getElementById('common-header').innerHTML = headerHTML;
 }
 
-document.addEventListener('DOMContentLoaded', loadHeader);
+function loadFooter() {
+    const footerHTML = `
+        <center>
+            <footer>
+                <p>&copy; 2026 Gyromotion Physiotherapy Clinic. All rights reserved.</p>
+            </footer>
+        </center>
+    `;
+    const footerEl = document.getElementById('common-footer');
+    if (footerEl) {
+        footerEl.innerHTML = footerHTML;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadHeader();
+    loadFooter();
+});

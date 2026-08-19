@@ -13,7 +13,10 @@ function loadHeader() {
             </ul>
         </nav>
     `;
-    document.getElementById('common-header').innerHTML = headerHTML;
+    const headerEl = document.getElementById('common-header');
+    if (headerEl) {
+        headerEl.innerHTML = headerHTML;
+    }
 }
 
 function loadFooter() {
